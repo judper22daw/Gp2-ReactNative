@@ -1,0 +1,17 @@
+{
+  "Poblacion": {
+    "Asia": "4753500631",
+    "Africa": "1440353360",
+    "America": "1046571635",
+    "Europa": "747089798",
+    "Oceania": "44284912",
+    "Antartida": "4490"
+  },
+  "Pib": {
+    "Asia": "38.78%",
+    "America": "28.22%",
+    "Europa": "24.73%",
+    "Africa": "2.84%",
+    "Oceania": "2.00%"
+  }
+}
