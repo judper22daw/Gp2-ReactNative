@@ -3,7 +3,7 @@ import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { LineChart } from 'react-native-charts-wrapper';
 
-const Screen1 = () => {
+const Dades = () => {
     // Per defecte, quan entrem a aquesta vista sempre es mostrara la opcio de Poblacio
     const [selectedOption, setSelectedOption] = React.useState('Poblacio');
     const [chartData, setChartData] = React.useState([]);
@@ -63,4 +63,4 @@ const Screen1 = () => {
     );
 };
 
-export default Screen1;
+export default Dades;
