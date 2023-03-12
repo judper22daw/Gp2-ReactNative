@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ImageBackground, TouchableOpacity, Linking } from 'react-native';
+import { View, Text, ImageBackground, TouchableOpacity, Linking, Image } from 'react-native';
 
 const Home = ({ navigation }) => {
     const handleVolunteerPress = () => {
@@ -11,7 +11,7 @@ const Home = ({ navigation }) => {
         };
 
     return (
-        <ImageBackground source={require('./backgroundImage.jpg')} style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <ImageBackground source={require('../assets/images/backgroundImage.jpg')} style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold', marginTop: 20 }}>POBRESA MUNDIAL</Text>
 
             <View style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: 20, borderRadius: 10, marginTop: 50, marginRight: 10, marginLeft: 10 }}>

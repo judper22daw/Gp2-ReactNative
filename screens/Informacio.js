@@ -6,7 +6,7 @@ const Informacio = () => {
     <View style={styles.container}>
       <Text style={styles.title}>La Pobreza Mundial</Text>
       <Image
-        source={require('./pobressa.png')}
+        source={require('../assets/images/pobressa.png')}
         style={styles.image}
       />
       <Text style={styles.text}>
