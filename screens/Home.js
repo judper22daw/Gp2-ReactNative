@@ -12,7 +12,7 @@ const Home = ({ navigation }) => {
 
     return (
         <ImageBackground source={require('../assets/images/backgroundImage.jpg')} style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold', marginTop: 20 }}>POBRESA MUNDIAL</Text>
+            <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold', marginTop: 20 }}>SHARE AND HELP</Text>
 
             <View style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: 20, borderRadius: 10, marginTop: 50, marginRight: 10, marginLeft: 10 }}>
                 <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 10 }}>Algunes xifres impactants:</Text>
