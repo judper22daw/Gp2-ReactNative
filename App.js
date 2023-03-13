@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import Navigation from './Navigation';
+import Rutes from './Rutes';
 
 const App = () => {
-  return <Navigation />;
+  return <Rutes />;
 };
 
 export default App;

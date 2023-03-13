@@ -10,18 +10,18 @@ import Dades from './screens/Dades';
 const Drawer = createDrawerNavigator();
 
 
-const Navigation = () => {
+const Rutes = () => {
   return (
     <NavigationContainer>
       <Drawer.Navigator>
         <Drawer.Screen name="Home" component={MainScreen} />
+        <Drawer.Screen name="Home2" component={Home} />
         <Drawer.Screen name="Dades" component={Dades} />
         <Drawer.Screen name="Contacte" component={Contacte} />
         <Drawer.Screen name="Informacio" component={Informacio} />
-        <Drawer.Screen name="Home2" component={Home} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
 };
 
-export default Navigation;
+export default Rutes;
