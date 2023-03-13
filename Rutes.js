@@ -4,9 +4,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import MainScreen from './screens/MainScreen';
 import Contacte from './screens/Contacte';
-import Informacio from './screens/Informacio';
+import Informacio from './screens/RateApp';
 import Home from './screens/Home';
 import Dades from './screens/Dades';
+import RateApp from './screens/RateApp';
 
 const Drawer = createDrawerNavigator();
 
@@ -51,8 +52,8 @@ const Rutes = () => {
           }}
         />
         <Drawer.Screen
-          name="Informacio"
-          component={Informacio}
+          name="Rate App"
+          component={RateApp}
           options={{
             drawerIcon: ({ color, size }) => (
               <Ionicons name="ios-information-circle" color={color} size={size} />
