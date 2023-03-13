@@ -46,7 +46,7 @@ const Rutes = () => {
           component={Contacte}
           options={{
             drawerIcon: ({ color, size }) => (
-              <Ionicons name="ios-contact" color={color} size={size} />
+              <Ionicons name="ios-person" color={color} size={size} />
             ),
           }}
         />
