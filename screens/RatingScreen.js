@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
 const RatingScreen = () => {
@@ -10,13 +10,19 @@ const RatingScreen = () => {
         // Apectes a puntuar
     });
 
+    const [comment, setComment] = useState('');
+
     const handleRatingChange = (aspecto, rating) => {
         setRatings({ ...ratings, [aspecto]: rating });
     };
 
+    const handleComentarioChange = (text) => {
+        setComentario(text);
+    };
+
     const handleSubmit = () => {
-        // Enviar puntuacions al servidor
-        console.log(ratings);
+        // Enviar puntuacions al servidor y comentario
+        console.log({ ...ratings, comment });
     };
 
     return (
@@ -52,12 +58,11 @@ const RatingScreen = () => {
                         <AntDesign name={ratings.navegacio >= 2 ? 'star' : 'staro'} size={30} color="#FFC107" />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => handleRatingChange('navegacio', 3)}>
-                        <AntDesign name={ratings.navegacio >= 3 ? 'star' : 'staro'} size={30} color="#FFC107" />
+                        <AntDesign name={ratings.comoditat >= 3 ? 'star' : 'staro'} size={30} color="#FFC107" />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => handleRatingChange('navegacio', 4)}>
                         <AntDesign name={ratings.navegacio >= 4 ? 'star' : 'staro'} size={30} color="#FFC107" />
                     </TouchableOpacity>
-
                     <TouchableOpacity onPress={() => handleRatingChange('navegacio', 5)}>
                         <AntDesign name={ratings.navegacio >= 5 ? 'star' : 'staro'} size={30} color="#FFC107" />
                     </TouchableOpacity>
@@ -78,11 +83,18 @@ const RatingScreen = () => {
                     <TouchableOpacity onPress={() => handleRatingChange('comoditat', 4)}>
                         <AntDesign name={ratings.comoditat >= 4 ? 'star' : 'staro'} size={30} color="#FFC107" />
                     </TouchableOpacity>
-
                     <TouchableOpacity onPress={() => handleRatingChange('comoditat', 5)}>
                         <AntDesign name={ratings.comoditat >= 5 ? 'star' : 'staro'} size={30} color="#FFC107" />
                     </TouchableOpacity>
                 </View>
+            </View>
+            <View style={styles.commentContainer}>
+                <Text style={styles.commentLabel}>Comentari:</Text>
+                <TextInput
+                    style={styles.commentInput}
+                    onChangeText={(text) => setComment(text)}
+                    value={comment}
+                />
             </View>
             <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
                 <Text style={styles.submitText}>Enviar</Text>
@@ -93,43 +105,55 @@ const RatingScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      padding: 20,
-      backgroundColor: '#fff',
-      justifyContent: 'center',
-      alignItems: 'center',
+        flex: 1,
+        padding: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     title: {
-      fontSize: 24,
-      fontWeight: 'bold',
-      marginBottom: 20,
-      textAlign: 'center',
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 20,
     },
     ratingContainer: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      marginVertical: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 10,
     },
     ratingLabel: {
-      fontSize: 18,
-      marginRight: 10,
+        fontSize: 18,
+        marginRight: 10,
     },
     ratingStars: {
-      flexDirection: 'row',
-      alignItems: 'center', 
+        flexDirection: 'row',
+    },
+    commentContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 10,
+    },
+    commentLabel: {
+        fontSize: 18,
+        marginRight: 10,
+    },
+    commentInput: {
+        height: 40,
+        width: 200,
+        borderColor: 'gray',
+        borderWidth: 1,
+        paddingLeft: 10,
     },
     submitButton: {
-      backgroundColor: '#FFC107',
-      padding: 10,
-      borderRadius: 5,
-      alignSelf: 'center',
-      marginTop: 20,
+        backgroundColor: '#FFC107',
+        padding: 10,
+        borderRadius: 5,
+        marginTop: 20,
     },
     submitText: {
-      color: '#fff',
-      fontSize: 20,
-      fontWeight: 'bold',
+        color: '#fff',
+        fontSize: 18,
+        fontWeight: 'bold',
     },
-  });  
+});
 
 export default RatingScreen;
