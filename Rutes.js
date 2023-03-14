@@ -51,11 +51,11 @@ const Rutes = () => {
           }}
         />
         <Drawer.Screen
-          name="Rate App 2"
+          name="Rate App"
           component={RatingScreen}
           options={{
             drawerIcon: ({ color, size }) => (
-              <Ionicons name="ios-information-circle" color={color} size={size} />
+              <Ionicons name="ios-star-outline" color={color} size={size} />
             ),
           }}
         />

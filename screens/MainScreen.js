@@ -4,7 +4,7 @@ import Home from './Home';
 
 const MainScreen = ({ navigation }) => {
     return (
-        <ImageBackground source={require('../assets/images/world.jpg')} style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <ImageBackground source={require('../assets/images/world.jpg')} style={{ flex: 1, alignItems: 'center', justifyContent: 'center', opacity: 0.7 }}>
             <Text style={{ color: 'white', fontSize: 30, fontWeight: 'bold', marginTop: -20 }}>SHARE AND HELP</Text>
             <View style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: 20, borderRadius: 10, marginTop: 50, marginRight: 10, marginLeft: 10 }}>
                 <Text style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 10 }}>Benvingut!</Text>

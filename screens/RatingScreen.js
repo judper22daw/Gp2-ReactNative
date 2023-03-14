@@ -30,23 +30,21 @@ const RatingScreen = () => {
             <Text style={styles.title}>La teva opinió importa!</Text>
             <View style={styles.ratingContainer}>
                 <Text style={styles.ratingLabel}>Disseny de l'app</Text>
-                <View style={{ flexDirection: 'row' }}>
-                    <TouchableOpacity onPress={() => handleRatingChange('disseny', 1)}>
-                        <AntDesign name={ratings.disseny >= 1 ? 'star' : 'staro'} size={30} color="#FFC107" />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => handleRatingChange('disseny', 2)}>
-                        <AntDesign name={ratings.disseny >= 2 ? 'star' : 'staro'} size={30} color="#FFC107" />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => handleRatingChange('disseny', 3)}>
-                        <AntDesign name={ratings.disseny >= 3 ? 'star' : 'staro'} size={30} color="#FFC107" />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => handleRatingChange('disseny', 4)}>
-                        <AntDesign name={ratings.disseny >= 4 ? 'star' : 'staro'} size={30} color="#FFC107" />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => handleRatingChange('disseny', 5)}>
-                        <AntDesign name={ratings.disseny >= 5 ? 'star' : 'staro'} size={30} color="#FFC107" />
-                    </TouchableOpacity>
-                </View>
+                <TouchableOpacity onPress={() => handleRatingChange('disseny', 1)}>
+                    <AntDesign name={ratings.disseny >= 1 ? 'star' : 'staro'} size={30} color="#FFC107" />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => handleRatingChange('disseny', 2)}>
+                    <AntDesign name={ratings.disseny >= 2 ? 'star' : 'staro'} size={30} color="#FFC107" />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => handleRatingChange('disseny', 3)}>
+                    <AntDesign name={ratings.disseny >= 3 ? 'star' : 'staro'} size={30} color="#FFC107" />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => handleRatingChange('disseny', 4)}>
+                    <AntDesign name={ratings.disseny >= 4 ? 'star' : 'staro'} size={30} color="#FFC107" />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => handleRatingChange('disseny', 5)}>
+                    <AntDesign name={ratings.disseny >= 5 ? 'star' : 'staro'} size={30} color="#FFC107" />
+                </TouchableOpacity>
             </View>
             <View style={styles.ratingContainer}>
                 <Text style={styles.ratingLabel}>Navegació</Text>
