@@ -7,7 +7,7 @@ const RatingScreen = () => {
         disseny: 0,
         navegacio: 0,
         comoditat: 0,
-        // Apectes a puntuar
+        // Aspectes a puntuar
     });
 
     const [comment, setComment] = useState('');
@@ -21,7 +21,7 @@ const RatingScreen = () => {
     };
 
     const handleSubmit = () => {
-        // Enviar puntuacions al servidor y comentario
+        // Enviar puntuacions al servidor i el comentari
         console.log({ ...ratings, comment });
     };
 
@@ -142,6 +142,7 @@ const styles = StyleSheet.create({
         borderColor: 'gray',
         borderWidth: 1,
         paddingLeft: 10,
+        borderRadius: 5,
     },
     submitButton: {
         backgroundColor: '#FFC107',
@@ -153,6 +154,7 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 18,
         fontWeight: 'bold',
+        borderRadius: 10,
     },
 });
 

@@ -7,7 +7,7 @@ const Contacte = () => {
   const [message, setMessage] = React.useState('');
 
   const handleSubmit = () => {
-    // Aquí podrías agregar lógica para enviar el formulario
+    // Llogica per enviar el formulari
     console.log('Nombre:', name);
     console.log('Email:', email);
     console.log('Mensaje:', message);
