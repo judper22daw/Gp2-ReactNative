@@ -29,8 +29,8 @@ const RatingScreen = () => {
         <View style={styles.container}>
             <Text style={styles.title}>La teva opinió importa!</Text>
             <View style={styles.ratingContainer}>
-                <Text style={styles.ratingLabel}>Disseny de l'app:</Text>
-                <View style={styles.ratingStars}>
+                <Text style={styles.ratingLabel}>Disseny de l'app</Text>
+                <View style={{ flexDirection: 'row' }}>
                     <TouchableOpacity onPress={() => handleRatingChange('disseny', 1)}>
                         <AntDesign name={ratings.disseny >= 1 ? 'star' : 'staro'} size={30} color="#FFC107" />
                     </TouchableOpacity>
@@ -49,7 +49,7 @@ const RatingScreen = () => {
                 </View>
             </View>
             <View style={styles.ratingContainer}>
-                <Text style={styles.ratingLabel}>Navegació:</Text>
+                <Text style={styles.ratingLabel}>Navegació</Text>
                 <View style={styles.ratingStars}>
                     <TouchableOpacity onPress={() => handleRatingChange('navegacio', 1)}>
                         <AntDesign name={ratings.navegacio >= 1 ? 'star' : 'staro'} size={30} color="#FFC107" />
@@ -58,7 +58,7 @@ const RatingScreen = () => {
                         <AntDesign name={ratings.navegacio >= 2 ? 'star' : 'staro'} size={30} color="#FFC107" />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => handleRatingChange('navegacio', 3)}>
-                        <AntDesign name={ratings.comoditat >= 3 ? 'star' : 'staro'} size={30} color="#FFC107" />
+                        <AntDesign name={ratings.navegacio >= 3 ? 'star' : 'staro'} size={30} color="#FFC107" />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => handleRatingChange('navegacio', 4)}>
                         <AntDesign name={ratings.navegacio >= 4 ? 'star' : 'staro'} size={30} color="#FFC107" />
@@ -69,7 +69,7 @@ const RatingScreen = () => {
                 </View>
             </View>
             <View style={styles.ratingContainer}>
-                <Text style={styles.ratingLabel}>Comoditat:</Text>
+                <Text style={styles.ratingLabel}>Comoditat</Text>
                 <View style={styles.ratingStars}>
                     <TouchableOpacity onPress={() => handleRatingChange('comoditat', 1)}>
                         <AntDesign name={ratings.comoditat >= 1 ? 'star' : 'staro'} size={30} color="#FFC107" />
@@ -89,7 +89,7 @@ const RatingScreen = () => {
                 </View>
             </View>
             <View style={styles.commentContainer}>
-                <Text style={styles.commentLabel}>Comentari:</Text>
+                <Text style={styles.commentLabel}>Comentari</Text>
                 <TextInput
                     style={styles.commentInput}
                     onChangeText={(text) => setComment(text)}
@@ -131,6 +131,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 10,
+        borderRadius: 10,
     },
     commentLabel: {
         fontSize: 18,
