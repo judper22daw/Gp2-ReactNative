@@ -7,7 +7,7 @@ const RatingScreen = () => {
         disseny: 0,
         navegacio: 0,
         comoditat: 0,
-        // Aquí puedes añadir más aspectos para puntuar
+        // Apectes a puntuar
     });
 
     const handleRatingChange = (aspecto, rating) => {
@@ -15,7 +15,7 @@ const RatingScreen = () => {
     };
 
     const handleSubmit = () => {
-        // Aquí puedes enviar las puntuaciones al servidor
+        // Enviar puntuacions al servidor
         console.log(ratings);
     };
 
@@ -84,8 +84,6 @@ const RatingScreen = () => {
                     </TouchableOpacity>
                 </View>
             </View>
-            {/* Aquí puedes añadir más secciones de puntuación para otros aspectos */}
-
             <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
                 <Text style={styles.submitText}>Enviar</Text>
             </TouchableOpacity>
@@ -99,13 +97,13 @@ const styles = StyleSheet.create({
       padding: 20,
       backgroundColor: '#fff',
       justifyContent: 'center',
-      alignItems: 'center', // Agrega esta línea
+      alignItems: 'center',
     },
     title: {
       fontSize: 24,
       fontWeight: 'bold',
       marginBottom: 20,
-      textAlign: 'center', // Agrega esta línea
+      textAlign: 'center',
     },
     ratingContainer: {
       flexDirection: 'row',
@@ -118,7 +116,7 @@ const styles = StyleSheet.create({
     },
     ratingStars: {
       flexDirection: 'row',
-      alignItems: 'center', // Agrega esta línea
+      alignItems: 'center', 
     },
     submitButton: {
       backgroundColor: '#FFC107',
