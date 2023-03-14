@@ -5,7 +5,8 @@ import { AntDesign } from '@expo/vector-icons';
 const RatingScreen = () => {
     const [ratings, setRatings] = useState({
         disseny: 0,
-        aspecto2: 0,
+        navegacio: 0,
+        comoditat: 0,
         // Aquí puedes añadir más aspectos para puntuar
     });
 
@@ -42,23 +43,44 @@ const RatingScreen = () => {
                 </View>
             </View>
             <View style={styles.ratingContainer}>
-                <Text style={styles.ratingLabel}>Aspecto 2:</Text>
+                <Text style={styles.ratingLabel}>Navegació:</Text>
                 <View style={styles.ratingStars}>
-                    <TouchableOpacity onPress={() => handleRatingChange('aspecto2', 1)}>
-                        <AntDesign name={ratings.aspecto2 >= 1 ? 'star' : 'staro'} size={30} color="#FFC107" />
+                    <TouchableOpacity onPress={() => handleRatingChange('navegacio', 1)}>
+                        <AntDesign name={ratings.navegacio >= 1 ? 'star' : 'staro'} size={30} color="#FFC107" />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => handleRatingChange('aspecto2', 2)}>
-                        <AntDesign name={ratings.aspecto2 >= 2 ? 'star' : 'staro'} size={30} color="#FFC107" />
+                    <TouchableOpacity onPress={() => handleRatingChange('navegacio', 2)}>
+                        <AntDesign name={ratings.navegacio >= 2 ? 'star' : 'staro'} size={30} color="#FFC107" />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => handleRatingChange('aspecto2', 3)}>
-                        <AntDesign name={ratings.aspecto2 >= 3 ? 'star' : 'staro'} size={30} color="#FFC107" />
+                    <TouchableOpacity onPress={() => handleRatingChange('navegacio', 3)}>
+                        <AntDesign name={ratings.navegacio >= 3 ? 'star' : 'staro'} size={30} color="#FFC107" />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => handleRatingChange('aspecto2', 4)}>
-                        <AntDesign name={ratings.aspecto2 >= 4 ? 'star' : 'staro'} size={30} color="#FFC107" />
+                    <TouchableOpacity onPress={() => handleRatingChange('navegacio', 4)}>
+                        <AntDesign name={ratings.navegacio >= 4 ? 'star' : 'staro'} size={30} color="#FFC107" />
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => handleRatingChange('aspecto2', 5)}>
-                        <AntDesign name={ratings.aspecto2 >= 5 ? 'star' : 'staro'} size={30} color="#FFC107" />
+                    <TouchableOpacity onPress={() => handleRatingChange('navegacio', 5)}>
+                        <AntDesign name={ratings.navegacio >= 5 ? 'star' : 'staro'} size={30} color="#FFC107" />
+                    </TouchableOpacity>
+                </View>
+            </View>
+            <View style={styles.ratingContainer}>
+                <Text style={styles.ratingLabel}>Comoditat:</Text>
+                <View style={styles.ratingStars}>
+                    <TouchableOpacity onPress={() => handleRatingChange('comoditat', 1)}>
+                        <AntDesign name={ratings.comoditat >= 1 ? 'star' : 'staro'} size={30} color="#FFC107" />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => handleRatingChange('comoditat', 2)}>
+                        <AntDesign name={ratings.comoditat >= 2 ? 'star' : 'staro'} size={30} color="#FFC107" />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => handleRatingChange('comoditat', 3)}>
+                        <AntDesign name={ratings.comoditat >= 3 ? 'star' : 'staro'} size={30} color="#FFC107" />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => handleRatingChange('comoditat', 4)}>
+                        <AntDesign name={ratings.comoditat >= 4 ? 'star' : 'staro'} size={30} color="#FFC107" />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => handleRatingChange('comoditat', 5)}>
+                        <AntDesign name={ratings.comoditat >= 5 ? 'star' : 'staro'} size={30} color="#FFC107" />
                     </TouchableOpacity>
                 </View>
             </View>
