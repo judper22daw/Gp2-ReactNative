@@ -2,33 +2,62 @@ import React from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { LineChart } from 'react-native-charts-wrapper';
+import SQLite from 'react-native-sqlite-storage';
 
 const Dades = () => {
-    // Per defecte, quan entrem a aquesta vista sempre es mostrara la opcio de Poblacio
     const [selectedOption, setSelectedOption] = React.useState('Poblacio');
     const [chartData, setChartData] = React.useState([]);
 
-    const data = require('./dades.json');
-    const tableData = data[selectedOption];
+    const [tableData, setTableData] = React.useState({});
 
     const handleOptionChange = (value) => {
         setSelectedOption(value);
     };
 
     const handleChartButtonClick = () => {
-        const chartData = Object.entries(tableData).map(([label, value]) => ({
+        const chartData = Object.entries(data[selectedOption]).map(([label, value]) => ({
             x: label,
             y: Number(value),
         }));
         setChartData(chartData);
     };
 
-    const renderItem = ({ item }) => (
-        <View style={{ padding: 20, flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: 1, borderColor: '#CCCCCC' }}>
-            <Text style={{ fontSize: 18, borderRightWidth: 1, paddingRight: 10, borderColor: '#CCCCCC', textAlign: 'left' }}>{item[0]}</Text>
-            <Text style={{ fontSize: 16, textAlign: 'right' }}>{item[1]}</Text>
-        </View>
-    );
+    React.useEffect(() => {
+        // Configurar la conexión a la base de datos SQLite
+        SQLite.openDatabase(
+            { name: 'myAppDB.db', location: 'default' },
+            () => { },
+            error => {
+                console.log(error);
+            }
+        ).then(db => {
+            // Crear la tabla en la base de datos si no existe
+            db.transaction(tx => {
+                tx.executeSql(
+                    `CREATE TABLE IF NOT EXISTS dades (
+                        pais TEXT PRIMARY KEY,
+                        ${selectedOption.toLowerCase()} TEXT
+                    );`
+                );
+            });
+
+            // Leer los datos del archivo JSON y ejecutar una sentencia SQL INSERT para insertar cada fila en la tabla
+            Object.entries(data[selectedOption]).forEach(([pais, valor]) => {
+                db.transaction(tx => {
+                    tx.executeSql(
+                        `INSERT OR REPLACE INTO dades (pais, ${selectedOption.toLowerCase()}) VALUES (?, ?);`,
+                        [pais, valor],
+                        (tx, res) => {
+                            console.log(`Se ha insertado una fila en la tabla ${selectedOption} para el país ${pais}`);
+                        },
+                        error => {
+                            console.log(error);
+                        }
+                    );
+                });
+            });
+        });
+    }, [selectedOption]);
 
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 10, borderWidth: 1, borderColor: '#CCCCCC' }}>
