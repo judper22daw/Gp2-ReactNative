@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { LineChart } from 'react-native-charts-wrapper';
+import SQLite from 'react-native-sqlite-storage';
 
 const Dades = () => {
     // Per defecte, quan entrem a aquesta vista sempre es mostrara la opcio de Poblacio
@@ -16,12 +17,42 @@ const Dades = () => {
     };
 
     const handleChartButtonClick = () => {
+        const db = SQLite.openDatabase({ name: 'mydb.db', location: 'default' });
+
         const dadesTaula = Object.entries(tableData).map(([label, value]) => ({
             x: label,
             y: Number(value),
         }));
+
         setDadesTaula(dadesTaula);
+
+        db.transaction((tx) => {
+            tx.executeSql(
+                `CREATE TABLE IF NOT EXISTS ${opcioSeleccionada} (x TEXT PRIMARY KEY, y REAL);`,
+                [],
+                (tx, result) => {
+                    console.log('Taula creada');
+                },
+                (tx, error) => {
+                    console.log('Error al crear la taula:', error);
+                },
+            );
+
+            dadesTaula.forEach(({ x, y }) => {
+                tx.executeSql(
+                    `INSERT OR REPLACE INTO ${opcioSeleccionada} (x, y) VALUES (?, ?);`,
+                    [x, y],
+                    (tx, result) => {
+                        console.log(`Dades inserides de: ${x}`);
+                    },
+                    (tx, error) => {
+                        console.log(`Error a l'insertar les dades de: ${x}:`, error);
+                    },
+                );
+            });
+        });
     };
+
 
     const renderItem = ({ item }) => (
         <View style={{ padding: 20, flexDirection: 'row', justifyContent: 'space-between', borderBottomWidth: 1, borderColor: '#CCCCCC' }}>

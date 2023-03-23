@@ -1,0 +1,34 @@
+{
+    "Poblacio": {
+        "China": "1414782000",
+        "India": "1392329000",
+        "Estats Units": "336184000",
+        "Indonesia": "279154000",
+        "Pakistan": "241181000",
+        "Nigeria": "224437000"
+    },
+    "Pib": {
+        "Estats Units": "24796076",
+        "China": "18463130",
+        "Japó": "5383682 ",
+        "Alemania": "4557350 ",
+        "Regne Unit": "3442205 ",
+        "India": "3250078"
+    },
+    "Escolaritzacio": {
+        "Suissa": "13.4",
+        "Regne Unit": "13.3",
+        "Australia": "13.2",
+        "Alemania": "13.2",
+        "Estats Units": "13.2",
+        "Canada": "13.1"
+    },
+    "Mortalitat": {
+        "Espanya": "9.49%",
+        "Alemania": "12.3%",
+        "Regne Unit": "10.4%",
+        "França": "9.7%",
+        "Italia": "12%",
+        "Portugal": "12.1%"
+    }
+}

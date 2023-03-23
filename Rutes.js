@@ -7,6 +7,7 @@ import Contacte from './screens/Contacte';
 import Home from './screens/Home';
 import Dades from './screens/Dades';
 import RatingScreen from './screens/RatingScreen';
+// import TablaScreen from './screens/TablaScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -41,6 +42,15 @@ const Rutes = () => {
             ),
           }}
         />
+        {/* <Drawer.Screen
+          name="TableScreen"
+          component={TablaScreen}
+          options={{
+            drawerIcon: ({ color, size }) => (
+              <Ionicons name="ios-list" color={color} size={size} />
+            ),
+          }}
+        /> */}
         <Drawer.Screen
           name="Contacte"
           component={Contacte}
