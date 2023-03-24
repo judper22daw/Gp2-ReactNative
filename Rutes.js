@@ -8,6 +8,7 @@ import Home from './screens/Home';
 import Dades from './screens/Dades';
 import RatingScreen from './screens/RatingScreen';
 // import TablaScreen from './screens/TablaScreen';
+import Camera from './screens/Camera';
 
 const Drawer = createDrawerNavigator();
 
@@ -51,6 +52,15 @@ const Rutes = () => {
             ),
           }}
         /> */}
+        <Drawer.Screen
+          name="Camera"
+          component={Camera}
+          options={{
+            drawerIcon: ({ color, size }) => (
+              <Ionicons name="camera-outline" color={color} size={size} />
+            ),
+          }}
+        />
         <Drawer.Screen
           name="Contacte"
           component={Contacte}
