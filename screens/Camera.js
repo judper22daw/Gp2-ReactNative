@@ -1,29 +1,27 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, FlatList, Dimensions } from 'react-native';
+import { Ionicons } from '@expo/vector-icons'; // Importa el paquete Ionicons
 import * as ImagePicker from 'expo-image-picker';
 
 const { width } = Dimensions.get('window');
 
 const Camera = () => {
-    const [images, setImages] = useState([]); // Nuevo estado para las imágenes
+    const [images, setImages] = useState([]);
 
-    // Función para manejar el botón de subir foto desde la cámara
     const handleCameraButton = async () => {
-        let result = await ImagePicker.launchCameraAsync(); // Lanza la cámara
-        if (!result.cancelled) { // Si la imagen no se cancela, la agrega al array de imágenes
+        let result = await ImagePicker.launchCameraAsync();
+        if (!result.cancelled) {
             setImages([...images, result]);
         }
     };
 
-    // Función para manejar el botón de subir foto desde la galería
     const handleGalleryButton = async () => {
-        let result = await ImagePicker.launchImageLibraryAsync(); // Lanza la galería
-        if (!result.cancelled) { // Si la imagen no se cancela, la agrega al array de imágenes
+        let result = await ImagePicker.launchImageLibraryAsync();
+        if (!result.cancelled) {
             setImages([...images, result]);
         }
     };
 
-    // Función para renderizar cada elemento de la lista
     const renderImage = ({ item }) => (
         <View style={styles.imageContainer}>
             <Image style={styles.image} source={{ uri: item.uri }} resizeMode="cover" />
@@ -32,6 +30,10 @@ const Camera = () => {
 
     return (
         <View style={styles.container}>
+            <View style={styles.header}>
+                <Ionicons name="camera" size={24} color="black" />
+                <Text style={styles.headerText}>Les meves fotos</Text>
+            </View>
             <FlatList
                 style={styles.imageList}
                 data={images}
@@ -41,10 +43,10 @@ const Camera = () => {
             />
             <View style={styles.buttonContainer}>
                 <TouchableOpacity style={styles.button} onPress={handleCameraButton}>
-                    <Text style={styles.buttonText}>Subir foto desde la cámara</Text>
+                    <Text style={styles.buttonText}>Càmera</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button} onPress={handleGalleryButton}>
-                    <Text style={styles.buttonText}>Subir foto desde la galería</Text>
+                    <Text style={styles.buttonText}>Galeria</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -57,16 +59,29 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    header: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 20,
+        marginBottom: 10,
+    },
+    headerText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginLeft: 10,
+        /*color: '#1e88e5',*/
+    },
     buttonContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         marginBottom: 20,
     },
     button: {
-        backgroundColor: '#4CAF50',
+        backgroundColor: '#1e88e5',
         paddingVertical: 10,
         paddingHorizontal: 20,
         borderRadius: 5,
+        marginHorizontal: 10,
     },
     buttonText: {
         color: '#FFF',
