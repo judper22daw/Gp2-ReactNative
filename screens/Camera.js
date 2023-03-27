@@ -8,21 +8,21 @@ const { width } = Dimensions.get('window');
 const Camera = () => {
     const [images, setImages] = useState([]);
 
-    const handleCameraButton = async () => {
+    const handleCameraButton = async () => { //obrir la camera del mobil
         let result = await ImagePicker.launchCameraAsync();
         if (!result.cancelled) {
             setImages([...images, result]);
         }
     };
 
-    const handleGalleryButton = async () => {
+    const handleGalleryButton = async () => { // obrir la galeria
         let result = await ImagePicker.launchImageLibraryAsync();
         if (!result.cancelled) {
             setImages([...images, result]);
         }
     };
 
-    const renderImage = ({ item }) => (
+    const renderImage = ({ item }) => ( // renderitzar totes les imatges
         <View style={styles.imageContainer}>
             <Image style={styles.image} source={{ uri: item.uri }} resizeMode="cover" />
         </View>
