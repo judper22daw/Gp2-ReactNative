@@ -4,16 +4,36 @@ Aquesta aplicació ha estat creada amb la finalitat de generar consciència sobr
 
 ## Instal·lació
 
-Per instal·lar l'aplicació, es requereix tenir instal·lat Node.js a l'ordinador. A continuació, executeu la següent comanda a la terminal:
+Instal·lar npx expo.
 
-npx expo
+1. Verifiqueu que teniu Node.js instal·lat a l'ordinador executant la comanda node -v a la terminal. Si ja teniu instal·lat Node.js, aquesta comanda mostrarà la versió actual del programari. Si no teniu Node.js instal·lat, descarregueu-lo des del lloc web oficial de Node.js.
 
-### Posar en marxa el projecte
-1. Obre una terminal i executa la seg
+2. Un cop teniu instal·lat Node.js, podeu instal·lar npx executant la comanda següent a la terminal:
+
+   ```npm install -g npx```
+Aquesta comanda instal·larà npx de forma global al sistema.
+
+3. Per instal·lar Expo, executeu la comanda següent a la terminal:
+
+   ```npm install -g expo-cli```
+
+Aquesta comanda instal·larà l'eina d'Expo de forma global al sistema.
+
+## Posar en marxa el projecte
+1. Obre una terminal i executa la següent comanda per clonar el projecte
+
+   ```git clone https://github.com/judper22daw/Gp2-ReactNative.git ```
+
+2. Obre la terminal del projecte i executa l'ordre
+
+   ```npx expo start```
+
+3. Obre al teu dispositiu mobil l'app Expo i escaneja el codi QR que es mostra per la terminal.
+
 
 ## Ús
 
-En executar la comanda anterior, l'aplicació es posarà en marxa i mostrarà un missatge amb informació sobre la pobresa mundial. A més, l'aplicació generarà frases aleatòries relacionades amb el tema per ajudar a la reflexió.
+En executar la comanda anterior, l'aplicació es posarà en marxa i mostrarà un missatge amb informació sobre la pobresa mundial.
 
 ## Contribucions
 
