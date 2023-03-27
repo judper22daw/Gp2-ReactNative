@@ -5,7 +5,6 @@ import { LineChart } from 'react-native-charts-wrapper';
 import SQLite from 'react-native-sqlite-storage';
 
 const Dades = () => {
-    
     // Per defecte, quan entrem a aquesta vista sempre es mostrara la opcio de Poblacio
     const [opcioSeleccionada, seleccio] = React.useState('Poblacio');
     const [dadesTaula, setDadesTaula] = React.useState([]);
