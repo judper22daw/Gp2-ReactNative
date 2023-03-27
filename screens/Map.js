@@ -2,25 +2,25 @@ import React, { useState } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, TextInput } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 
-const PovertyMap = () => {
-    const [markers, setMarkers] = useState([]);
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
+const Mapa = () => {
+    const [markers, Marcadors] = useState([]);
+    const [title, Titol] = useState("");
+    const [description, Descripcio] = useState("");
 
-    const handleMapPress = (event) => {
+    const MapaPress = (event) => {
         const newMarker = {
             coordinate: event.nativeEvent.coordinate,
             title,
             description
         };
-        setMarkers([...markers, newMarker]);
-        setTitle("");
-        setDescription("");
+        Marcadors([...markers, newMarker]);
+        Titol("");
+        Descripcio("");
     };
 
     return (
         <View style={styles.container}>
-            <MapView style={styles.map} onPress={handleMapPress}>
+            <MapView style={styles.map} onPress={MapaPress}>
                 {markers.map((marker, index) => (
                     <Marker
                         key={index}
@@ -29,13 +29,13 @@ const PovertyMap = () => {
                         description={marker.description}
                     />
                 ))}
-                <Marker
+                <Marker // Marcadors per defecte. Es veuran sempre que s'obri el mapa.
                     coordinate={{
                         latitude: 37.78825,
                         longitude: -122.4324,
                     }}
-                    title="Pobreza mundial"
-                    description="Este es un punto relacionado con la pobreza mundial"
+                    title="Pobressa mundial"
+                    description="Pobressa mundial"
                 />
                 <Marker
                     coordinate={{
@@ -51,16 +51,16 @@ const PovertyMap = () => {
                     style={styles.input}
                     placeholder="Títol"
                     value={title}
-                    onChangeText={setTitle}
+                    onChangeText={Titol}
                 />
                 <TextInput
                     style={styles.input}
                     placeholder="Descripció"
                     value={description}
-                    onChangeText={setDescription}
+                    onChangeText={Descripcio}
                 />
             </View>
-            <TouchableOpacity style={styles.button} onPress={() => setMarkers([])}>
+            <TouchableOpacity style={styles.button} onPress={() => Marcadors([])}>
                 <Text style={styles.buttonText}>Esborrar marcadors</Text>
             </TouchableOpacity>
         </View>
@@ -115,4 +115,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default PovertyMap;
+export default Mapa;

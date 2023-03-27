@@ -9,7 +9,7 @@ import Dades from './screens/Dades';
 import RatingScreen from './screens/RatingScreen';
 // import TablaScreen from './screens/TablaScreen';
 import Camera from './screens/Camera';
-import PovertyMap from './screens/Map';
+import Mapa from './screens/Map';
 
 const Drawer = createDrawerNavigator();
 
@@ -44,24 +44,15 @@ const Rutes = () => {
             ),
           }}
         />
-                <Drawer.Screen
+        <Drawer.Screen
           name="Mapa"
-          component={PovertyMap}
+          component={Mapa}
           options={{
             drawerIcon: ({ color, size }) => (
-              <Ionicons name="ios-person" color={color} size={size} />
+              <Ionicons name="ios-map" color={color} size={size} />
             ),
           }}
         />
-        {/* <Drawer.Screen
-          name="TableScreen"
-          component={TablaScreen}
-          options={{
-            drawerIcon: ({ color, size }) => (
-              <Ionicons name="ios-list" color={color} size={size} />
-            ),
-          }}
-        /> */}
         <Drawer.Screen
           name="Camera"
           component={Camera}
