@@ -1,5 +1,4 @@
-# README per l'aplicació npx espo sobre la pobresa mundial
-
+# REACT NATIVE - POBRESA MUNDIAL
 Aquesta aplicació ha estat creada amb la finalitat de generar consciència sobre la pobresa mundial i promoure la seva lluita.
 
 ## Instal·lació
