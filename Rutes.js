@@ -5,11 +5,11 @@ import { Ionicons } from '@expo/vector-icons';
 import MainScreen from './screens/MainScreen';
 import Contacte from './screens/Contacte';
 import Home from './screens/Home';
-import Dades from './screens/Dades';
 import RatingScreen from './screens/RatingScreen';
 // import TablaScreen from './screens/TablaScreen';
 import Camera from './screens/Camera';
 import Mapa from './screens/Map';
+import { Dades } from './screens/Dades';
 
 const Drawer = createDrawerNavigator();
 
